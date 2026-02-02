@@ -1,0 +1,15 @@
+services:
+  cmdbuild:
+    image: tomcat:9.0-jdk17
+    network_mode: host
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      - CATALINA_OPTS=${CATALINA_OPTS:--Xms256m -Xmx1g}
+    volumes:
+      - ./webapp:/usr/local/tomcat/webapps/cmdbuild
+      - ./conf/database.conf:/usr/local/tomcat/webapps/cmdbuild/WEB-INF/conf/database.conf
+      - cmdbuild_logs:/usr/local/tomcat/logs
+      - cmdbuild_work:/usr/local/tomcat/work
+volumes:
+  cmdbuild_logs:
+  cmdbuild_work:

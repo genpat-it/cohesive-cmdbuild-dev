@@ -1,0 +1,30 @@
+# Cloned source code
+source/
+
+# War builder
+war-builder/
+
+# Extracted webapp
+webapp/
+
+# Build output
+output/
+
+# User-specific database config
+conf/database.conf
+
+# Docker volumes
+cmdbuild_logs/
+cmdbuild_work/
+
+# Environment file with secrets
+.env
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
